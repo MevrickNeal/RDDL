@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RDDL Fitness Zone — Dhaka</title>
   <meta name="description" content="RDDL Fitness Zone — Dhaka's premier strength facility. Real results, elite equipment, expert coaching.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#D62828">
+  <link rel="apple-touch-icon" href="images/Banner.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -257,5 +260,12 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('SW registered'))
+      .catch(err => console.log('SW error', err));
+  }
+</script>
 </body>
 </html>

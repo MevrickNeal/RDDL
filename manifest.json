@@ -1,0 +1,20 @@
+{
+  "name": "RDDL Fitness Zone",
+  "short_name": "RDDL Gym",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#060606",
+  "theme_color": "#D62828",
+  "icons": [
+    {
+      "src": "images/Banner.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/Banner.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
