@@ -1,89 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RDDL Fitness Zone</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RDDL Fitness Zone — Dhaka</title>
+  <meta name="description" content="RDDL Fitness Zone — Dhaka's premier strength and conditioning facility. State-of-the-art equipment, elite coaching, results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=DM+Sans:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">RDDL FITNESS ZONE</div>
-        <div class="links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#stats">Stats</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#location">Location</a>
-            <a href="admin.html" class="admin-btn">Admin</a>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">RDDL</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#equipment">Equipment</a></li>
+      <li><a href="#data">Live Data</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <a href="admin.html" class="nav-cta">Admin</a>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Mirpur, Dhaka</p>
+    <h1 class="hero-title">FORGE<br><span class="hero-accent">YOUR</span><br>LEGACY</h1>
+    <p class="hero-sub">The harder the battle — the sweeter the victory.</p>
+    <div class="hero-actions">
+      <a href="#location" class="btn-primary">Find Us</a>
+      <a href="#equipment" class="btn-ghost">Explore Equipment</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="stat-num" data-target="768">0</span><span class="stat-label">Members</span></div>
+      <div class="hero-stat"><span class="stat-num" data-target="20">0</span><span class="stat-label">Machines</span></div>
+      <div class="hero-stat"><span class="stat-num" data-target="4">0</span><span class="stat-label">Stars</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title">A Gym That Doesn't<br>Compromise</h2>
+        <p class="about-body">RDDL Fitness Zone is Mirpur's elite strength and conditioning facility. Purpose-built for serious athletes and beginners who refuse to stay beginners — every machine, every inch of floor is engineered for results.</p>
+        <p class="about-body">768 members. One goal. No excuses.</p>
+        <div class="about-badges">
+          <div class="badge">Air Conditioned</div>
+          <div class="badge">Expert Trainers</div>
+          <div class="badge">Premium Equipment</div>
+          <div class="badge">Open 7 Days</div>
         </div>
-    </nav>
-
-    <header id="home">
-        <div class="hero-content">
-            <h1 id="hero-title">Challenge Your Limits</h1>
-            <p id="hero-subtitle">The harder the battle, the sweeter the victory.</p>
-            <a href="#location" class="cta-btn">Join Now</a>
+      </div>
+      <div class="about-visual">
+        <img src="images/Banner.png" alt="RDDL Members" class="about-img">
+        <div class="about-img-tag">
+          <span class="tag-num">134</span>
+          <span class="tag-label">Talking About This</span>
         </div>
-    </header>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <div class="about-grid">
-            <div class="about-text" id="about-desc">
-                Welcome to RDDL Fitness Zone. We offer state-of-the-art machines, experienced trainers, and a motivating environment to help you achieve your fitness goals.
-            </div>
-            <div class="about-image">
-                <img id="about-img" src="https://scontent.fdac19-1.fna.fbcdn.net/v/t39.30808-1/510406336_122104530668916170_3670593091723106690_n.jpg?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=3ab345&_nc_ohc=6jNR-_TpY5EQ7kNvwE6H_Et&_nc_ht=scontent.fdac19-1.fna&oh=00_Af6FzcGYZFyWBYu3Y4XOcTuafq9MXId4pV6zjB2v7YEp1g&oe=69FAA939" alt="RDDL Gym Floor">
-            </div>
+<!-- EQUIPMENT -->
+<section id="equipment">
+  <div class="container">
+    <p class="section-eyebrow center">The Arsenal</p>
+    <h2 class="section-title center">Every Machine.<br>Every Muscle.</h2>
+    <div class="equipment-grid" id="equipment-grid">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE DATA -->
+<section id="data">
+  <div class="container">
+    <p class="section-eyebrow center">Live Intelligence</p>
+    <h2 class="section-title center">Know When To Train</h2>
+
+    <div class="data-tabs">
+      <button class="tab-btn active" data-tab="busyness">Crowd Level</button>
+      <button class="tab-btn" data-tab="ratings">Ratings Breakdown</button>
+      <button class="tab-btn" data-tab="social">Social Pulse</button>
+    </div>
+
+    <div class="tab-content active" id="tab-busyness">
+      <div class="chart-wrapper">
+        <div class="day-selector">
+          <button class="day-btn active" data-day="0">Mon</button>
+          <button class="day-btn" data-day="1">Tue</button>
+          <button class="day-btn" data-day="2">Wed</button>
+          <button class="day-btn" data-day="3">Thu</button>
+          <button class="day-btn" data-day="4">Fri</button>
+          <button class="day-btn" data-day="5">Sat</button>
+          <button class="day-btn" data-day="6">Sun</button>
         </div>
-    </section>
+        <div class="bar-chart" id="bar-chart"></div>
+        <div class="chart-note">Based on Google Maps Popular Times data</div>
+      </div>
+    </div>
 
-    <section id="stats">
-        <h2>Popular Times</h2>
-        <p>Stats of people being there at different times of the day</p>
-        <div class="chart-container">
-            <div class="bar" style="height: 20%;"><span class="time">6 AM</span></div>
-            <div class="bar" style="height: 40%;"><span class="time">8 AM</span></div>
-            <div class="bar" style="height: 30%;"><span class="time">10 AM</span></div>
-            <div class="bar" style="height: 50%;"><span class="time">12 PM</span></div>
-            <div class="bar" style="height: 60%;"><span class="time">4 PM</span></div>
-            <div class="bar" style="height: 90%;"><span class="time">6 PM</span></div>
-            <div class="bar" style="height: 80%;"><span class="time">8 PM</span></div>
-            <div class="bar" style="height: 40%;"><span class="time">10 PM</span></div>
+    <div class="tab-content" id="tab-ratings">
+      <div class="ratings-panel">
+        <div class="rating-big">4.0</div>
+        <div class="rating-stars-big">
+          <span class="star filled"></span><span class="star filled"></span><span class="star filled"></span><span class="star filled"></span><span class="star empty"></span>
         </div>
-    </section>
-
-    <section id="reviews">
-        <h2>Social Media Reviews</h2>
-        <div class="reviews-grid" id="reviews-container">
-            <!-- Reviews injected by JS -->
+        <p class="rating-source">Google Maps</p>
+        <div class="rating-bars">
+          <div class="rbar-row"><span>5</span><div class="rbar-track"><div class="rbar-fill" style="width:45%"></div></div><span>45%</span></div>
+          <div class="rbar-row"><span>4</span><div class="rbar-track"><div class="rbar-fill" style="width:30%"></div></div><span>30%</span></div>
+          <div class="rbar-row"><span>3</span><div class="rbar-track"><div class="rbar-fill" style="width:15%"></div></div><span>15%</span></div>
+          <div class="rbar-row"><span>2</span><div class="rbar-track"><div class="rbar-fill" style="width:6%"></div></div><span>6%</span></div>
+          <div class="rbar-row"><span>1</span><div class="rbar-track"><div class="rbar-fill" style="width:4%"></div></div><span>4%</span></div>
         </div>
-    </section>
-
-    <section id="location">
-        <h2>Location & Nearby Places</h2>
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.316719812423!2d90.3536836!3d23.8237099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1005821a5b3%3A0xa76550a237f94560!2sRDDL%20Fitness%20Zone!5e0!3m2!1sen!2sbd!4v1714481358999!5m2!1sen!2sbd" 
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            <div class="nearby-places">
-                <h3>Places within 1km</h3>
-                <ul>
-                    <li>Mirpur DOHS - 0.5 km</li>
-                    <li>Mirpur 12 Bus Stand - 0.8 km</li>
-                    <li>Pallabi Metro Station - 1.0 km</li>
-                </ul>
-            </div>
+        <div class="sentiment-tags">
+          <div class="s-tag positive">Good trainers</div>
+          <div class="s-tag positive">Clean space</div>
+          <div class="s-tag positive">Good equipment</div>
+          <div class="s-tag neutral">Crowded evenings</div>
+          <div class="s-tag positive">Value for money</div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2026 RDDL Fitness Zone. All rights reserved.</p>
-    </footer>
+    <div class="tab-content" id="tab-social">
+      <div class="social-stats">
+        <div class="social-card">
+          <div class="social-icon fb">f</div>
+          <div class="social-info">
+            <span class="social-num">768</span>
+            <span class="social-label">Page Likes</span>
+          </div>
+        </div>
+        <div class="social-card">
+          <div class="social-icon fb">f</div>
+          <div class="social-info">
+            <span class="social-num">134</span>
+            <span class="social-label">Talking About</span>
+          </div>
+        </div>
+        <div class="social-card">
+          <div class="social-icon gm">G</div>
+          <div class="social-info">
+            <span class="social-num">4.0</span>
+            <span class="social-label">Google Rating</span>
+          </div>
+        </div>
+      </div>
+      <div class="social-quote">
+        "Don't limit your challenges. Challenge your limits."
+        <span>— RDDL Official</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <p class="section-eyebrow center">Verified Reviews</p>
+    <h2 class="section-title center">What Members Say</h2>
+    <div class="reviews-track-wrapper">
+      <div class="reviews-track" id="reviews-track">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+    <div class="reviews-nav">
+      <button id="rev-prev" class="rev-btn">&#8592;</button>
+      <div class="rev-dots" id="rev-dots"></div>
+      <button id="rev-next" class="rev-btn">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="container">
+    <p class="section-eyebrow center">Find Us</p>
+    <h2 class="section-title center">Location</h2>
+    <div class="location-grid">
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.316719812423!2d90.35368!3d23.82371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1005821a5b3%3A0xa76550a237f94560!2sRDDL%20Fitness%20Zone!5e0!3m2!1sen!2sbd!4v1714481358999!5m2!1sen!2sbd"
+          width="100%" height="420" style="border:0;border-radius:8px;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+      <div class="location-info">
+        <div class="loc-block">
+          <h4>Address</h4>
+          <p>RDDL Fitness Zone<br>Mirpur, Dhaka, Bangladesh<br>23.8237 N, 90.3537 E</p>
+        </div>
+        <div class="loc-block">
+          <h4>Hours</h4>
+          <p>Saturday — Thursday: 6 AM – 10 PM<br>Friday: Closed / Limited Hours</p>
+        </div>
+        <div class="loc-block">
+          <h4>Nearby</h4>
+          <ul class="nearby-list">
+            <li>Mirpur DOHS — 0.5 km</li>
+            <li>Mirpur 12 Bus Stand — 0.8 km</li>
+            <li>Pallabi Metro Station — 1.0 km</li>
+          </ul>
+        </div>
+        <a href="https://www.google.com/maps/place/RDDL+Fitness+Zone/@23.8237099,90.3536836,17z" target="_blank" class="btn-primary mt20">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">RDDL</div>
+    <p class="footer-tag">Forge Your Legacy</p>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/Rddlfitnesszone/" target="_blank">Facebook</a>
+      <a href="https://www.google.com/maps/place/RDDL+Fitness+Zone/@23.8237099,90.3536836,17z" target="_blank">Google Maps</a>
+      <a href="admin.html">Admin</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 RDDL Fitness Zone. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
