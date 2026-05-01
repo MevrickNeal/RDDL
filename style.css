@@ -81,13 +81,16 @@ ul{list-style:none}
 .hstat-div{width:1px;height:48px;background:var(--border);margin:0 28px 0 0}
 .hero-right{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:center;height:100%;padding-top:40px}
 .hero-cutout{
-  max-height:82vh;
+  max-height:100vh;
+  height: 90%;
   width:auto;
   object-fit:contain;
-  object-position:bottom;
+  object-position:bottom right;
   filter:drop-shadow(0 0 60px rgba(214,40,40,0.3));
   animation:floatUp .1s ease-out forwards;
   position:relative;z-index:2;
+  transform: scale(1.2) translateX(-5%);
+  transform-origin: bottom center;
 }
 .hero-glow{
   position:absolute;

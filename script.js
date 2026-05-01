@@ -164,8 +164,8 @@ function getCurrentCrowd() {
   const day = now.getDay(); // 0=Sun,6=Sat
   const hour = now.getHours();
   const bdDay = day === 0 ? 6 : day - 1; // Mon=0
-  if (hour < 6 || hour >= 22) return { pct: 0, label: 'Closed', color: '#444' };
-  const idx = Math.min(hour - 6, 15);
+  if (hour < 6) return { pct: 0, label: 'Closed', color: '#444' };
+  const idx = Math.min(Math.max(hour - 6, 0), 15);
   const raw = popularTimes[bdDay][idx];
   let label, color;
   if (raw < 30) { label = 'Not Busy'; color = '#44cc44'; }
