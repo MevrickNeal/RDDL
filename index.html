@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RDDL Fitness Zone — Dhaka</title>
-  <meta name="description" content="RDDL Fitness Zone — Dhaka's premier strength and conditioning facility. State-of-the-art equipment, elite coaching, results.">
+  <meta name="description" content="RDDL Fitness Zone — Dhaka's premier strength facility. Real results, elite equipment, expert coaching.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=DM+Sans:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,228 +16,348 @@
   <div class="nav-inner">
     <div class="nav-logo">RDDL</div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#muscle-map">Muscle Map</a></li>
       <li><a href="#equipment">Equipment</a></li>
+      <li><a href="#ai-trainer">AI Trainer</a></li>
       <li><a href="#data">Live Data</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#location">Location</a></li>
     </ul>
     <a href="admin.html" class="nav-cta">Admin</a>
-    <button class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Mirpur, Dhaka</p>
-    <h1 class="hero-title">FORGE<br><span class="hero-accent">YOUR</span><br>LEGACY</h1>
-    <p class="hero-sub">The harder the battle — the sweeter the victory.</p>
-    <div class="hero-actions">
-      <a href="#location" class="btn-primary">Find Us</a>
-      <a href="#equipment" class="btn-ghost">Explore Equipment</a>
+  <div class="hero-bg-img"></div>
+  <div class="hero-left-content">
+    <p class="hero-eyebrow">Mirpur, Dhaka — Est. 2023</p>
+    <h1 class="hero-title">NO<br>LIMITS.<br><span class="hero-red">NO</span><br>EXCUSES.</h1>
+    <p class="hero-sub">Where ordinary people forge extraordinary bodies.</p>
+    <div class="hero-ctas">
+      <a href="#muscle-map" class="btn-red">Start Training</a>
+      <a href="#location" class="btn-outline">Find Us</a>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><span class="stat-num" data-target="768">0</span><span class="stat-label">Members</span></div>
-      <div class="hero-stat"><span class="stat-num" data-target="20">0</span><span class="stat-label">Machines</span></div>
-      <div class="hero-stat"><span class="stat-num" data-target="4">0</span><span class="stat-label">Stars</span></div>
+    <div class="hero-stats-row">
+      <div class="hstat"><span class="hstat-n" data-target="768">0</span><span class="hstat-l">Members</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="hstat-n" data-target="15">0</span><span class="hstat-l">Machines</span></div>
+      <div class="hstat-div"></div>
+      <div class="hstat"><span class="hstat-n" data-target="4">0</span><span class="hstat-l">Google Stars</span></div>
     </div>
   </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
+  <div class="hero-right">
+    <img src="images/cutout.png" alt="RDDL Trainer" class="hero-cutout">
+    <div class="hero-glow"></div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- TEAM STRIP -->
+<section id="team-strip">
+  <div class="strip-label">OUR CREW</div>
+  <div class="team-gallery">
+    <img src="images/Banner.png" alt="Team">
+    <img src="images/banner-gemini.png" alt="Trainer">
+    <img src="images/Trademill.png" alt="Floor">
+    <img src="images/benchpressangle.png" alt="Equipment">
+    <img src="images/hanging bar.png" alt="Rack">
+    <img src="images/upper body.png" alt="Machine">
+  </div>
+</section>
+
+<!-- ═══════════════ MUSCLE MAP (MuscleWiki style) ═══════════════ -->
+<section id="muscle-map">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <p class="section-eyebrow">Who We Are</p>
-        <h2 class="section-title">A Gym That Doesn't<br>Compromise</h2>
-        <p class="about-body">RDDL Fitness Zone is Mirpur's elite strength and conditioning facility. Purpose-built for serious athletes and beginners who refuse to stay beginners — every machine, every inch of floor is engineered for results.</p>
-        <p class="about-body">768 members. One goal. No excuses.</p>
-        <div class="about-badges">
-          <div class="badge">Air Conditioned</div>
-          <div class="badge">Expert Trainers</div>
-          <div class="badge">Premium Equipment</div>
-          <div class="badge">Open 7 Days</div>
+    <p class="eyebrow center">Interactive Training</p>
+    <h2 class="sec-title center">What Do You Want<br>To Train Today?</h2>
+    <div class="muscle-layout">
+      <div class="muscle-svg-wrap">
+        <div class="body-view-tabs">
+          <button class="bv-btn active" data-view="front">Front</button>
+          <button class="bv-btn" data-view="back">Back</button>
+        </div>
+        <div class="body-diagram" id="body-diagram">
+          <!-- FRONT VIEW -->
+          <svg id="svg-front" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+            <!-- Body silhouette -->
+            <ellipse cx="150" cy="55" rx="38" ry="42" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <!-- Neck -->
+            <rect x="136" y="88" width="28" height="20" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <!-- Chest -->
+            <path d="M95,108 Q150,100 205,108 L215,175 Q150,185 85,175 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="chest" id="z-chest"/>
+            <!-- Left Shoulder -->
+            <ellipse cx="82" cy="120" rx="22" ry="30" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="shoulders" id="z-shoulder-l"/>
+            <!-- Right Shoulder -->
+            <ellipse cx="218" cy="120" rx="22" ry="30" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="shoulders" id="z-shoulder-r"/>
+            <!-- Abs -->
+            <path d="M115,175 Q150,170 185,175 L190,265 Q150,270 110,265 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="abs" id="z-abs"/>
+            <!-- Left Bicep -->
+            <ellipse cx="68" cy="170" rx="16" ry="35" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="biceps" id="z-bicep-l"/>
+            <!-- Right Bicep -->
+            <ellipse cx="232" cy="170" rx="16" ry="35" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="biceps" id="z-bicep-r"/>
+            <!-- Left Forearm -->
+            <ellipse cx="60" cy="235" rx="13" ry="30" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="forearms" id="z-fore-l"/>
+            <!-- Right Forearm -->
+            <ellipse cx="240" cy="235" rx="13" ry="30" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="forearms" id="z-fore-r"/>
+            <!-- Quads Left -->
+            <ellipse cx="125" cy="340" rx="30" ry="60" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="quads" id="z-quad-l"/>
+            <!-- Quads Right -->
+            <ellipse cx="175" cy="340" rx="30" ry="60" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="quads" id="z-quad-r"/>
+            <!-- Left Calf -->
+            <ellipse cx="120" cy="470" rx="18" ry="40" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="calves" id="z-calf-l"/>
+            <!-- Right Calf -->
+            <ellipse cx="180" cy="470" rx="18" ry="40" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="calves" id="z-calf-r"/>
+            <!-- Labels -->
+            <text x="150" y="148" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">CHEST</text>
+            <text x="150" y="222" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">ABS</text>
+            <text x="68" y="175" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">BI</text>
+            <text x="232" y="175" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">BI</text>
+            <text x="125" y="344" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">QUAD</text>
+            <text x="175" y="344" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">QUAD</text>
+          </svg>
+          <!-- BACK VIEW -->
+          <svg id="svg-back" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg" style="display:none">
+            <ellipse cx="150" cy="55" rx="38" ry="42" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <rect x="136" y="88" width="28" height="20" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <!-- Traps -->
+            <path d="M110,95 Q150,88 190,95 L200,130 Q150,125 100,130 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="traps" id="z-traps"/>
+            <!-- Lats Left -->
+            <path d="M90,130 Q110,155 115,195 L95,200 Q70,160 75,130 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="lats" id="z-lat-l"/>
+            <!-- Lats Right -->
+            <path d="M210,130 Q190,155 185,195 L205,200 Q230,160 225,130 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="lats" id="z-lat-r"/>
+            <!-- Mid Back -->
+            <path d="M115,130 Q150,125 185,130 L185,195 Q150,200 115,195 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="midback" id="z-midback"/>
+            <!-- Left Tricep -->
+            <ellipse cx="68" cy="165" rx="16" ry="35" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="triceps" id="z-tri-l"/>
+            <!-- Right Tricep -->
+            <ellipse cx="232" cy="165" rx="16" ry="35" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="triceps" id="z-tri-r"/>
+            <!-- Glutes -->
+            <path d="M110,265 Q150,260 190,265 L190,320 Q150,330 110,320 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="glutes" id="z-glutes"/>
+            <!-- Hamstrings Left -->
+            <ellipse cx="125" cy="370" rx="28" ry="52" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="hamstrings" id="z-ham-l"/>
+            <!-- Hamstrings Right -->
+            <ellipse cx="175" cy="370" rx="28" ry="52" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="hamstrings" id="z-ham-r"/>
+            <!-- Calves -->
+            <ellipse cx="122" cy="478" rx="18" ry="38" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="calves" id="z-calf-bl"/>
+            <ellipse cx="178" cy="478" rx="18" ry="38" fill="#1a1a1a" stroke="#333" stroke-width="1"
+              class="muscle-zone" data-muscle="calves" id="z-calf-br"/>
+            <text x="150" y="115" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">TRAPS</text>
+            <text x="150" y="165" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">LATS</text>
+            <text x="150" y="295" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">GLUTES</text>
+            <text x="150" y="375" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">HAMSTRINGS</text>
+            <text x="68" y="170" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">TRI</text>
+            <text x="232" y="170" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">TRI</text>
+          </svg>
         </div>
       </div>
-      <div class="about-visual">
-        <img src="images/Banner.png" alt="RDDL Members" class="about-img">
-        <div class="about-img-tag">
-          <span class="tag-num">134</span>
-          <span class="tag-label">Talking About This</span>
+      <div class="muscle-info-panel" id="muscle-info-panel">
+        <div class="mip-placeholder">
+          <div class="mip-icon">+</div>
+          <p>Tap a muscle group<br>to see exercises</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EQUIPMENT -->
+<!-- ═══════════════ EQUIPMENT ═══════════════ -->
 <section id="equipment">
   <div class="container">
-    <p class="section-eyebrow center">The Arsenal</p>
-    <h2 class="section-title center">Every Machine.<br>Every Muscle.</h2>
-    <div class="equipment-grid" id="equipment-grid">
-      <!-- Injected by JS -->
+    <p class="eyebrow center">The Arsenal</p>
+    <h2 class="sec-title center">Every Machine.<br>Every Muscle.</h2>
+    <div class="eq-filter-row">
+      <button class="eq-filter active" data-cat="all">All</button>
+      <button class="eq-filter" data-cat="cardio">Cardio</button>
+      <button class="eq-filter" data-cat="upper">Upper Body</button>
+      <button class="eq-filter" data-cat="lower">Lower Body</button>
+      <button class="eq-filter" data-cat="compound">Compound</button>
+    </div>
+    <div class="eq-grid" id="eq-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════ AI TRAINER ═══════════════ -->
+<section id="ai-trainer">
+  <div class="container">
+    <p class="eyebrow center">Powered by AI</p>
+    <h2 class="sec-title center">Your Personal<br>RDDL AI Coach</h2>
+    <div class="ai-chat-wrap">
+      <div class="ai-chat-header">
+        <div class="ai-avatar">R</div>
+        <div class="ai-info">
+          <div class="ai-name">RDDL Coach</div>
+          <div class="ai-status">Online — Ask me anything</div>
+        </div>
+      </div>
+      <div class="ai-messages" id="ai-messages">
+        <div class="ai-msg bot">
+          <div class="ai-bubble">Welcome to RDDL Fitness Zone. I am your AI training coach. Ask me about workouts, nutrition, machines, or how to get started.</div>
+        </div>
+      </div>
+      <div class="ai-quick-btns">
+        <button class="ai-quick" data-q="Create a beginner workout plan for me">Beginner Plan</button>
+        <button class="ai-quick" data-q="Which machines should I use to build chest?">Build Chest</button>
+        <button class="ai-quick" data-q="What should I eat before training?">Pre-Workout Nutrition</button>
+        <button class="ai-quick" data-q="How many days a week should I train?">Training Frequency</button>
+        <button class="ai-quick" data-q="How do I use the treadmill at RDDL?">Treadmill Guide</button>
+      </div>
+      <div class="ai-input-row">
+        <input type="text" id="ai-input" placeholder="Ask your coach..." autocomplete="off">
+        <button id="ai-send" class="btn-red-sm">Send</button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INTERACTIVE DATA -->
+<!-- ═══════════════ LIVE DATA ═══════════════ -->
 <section id="data">
   <div class="container">
-    <p class="section-eyebrow center">Live Intelligence</p>
-    <h2 class="section-title center">Know When To Train</h2>
+    <p class="eyebrow center">Real-Time Intelligence</p>
+    <h2 class="sec-title center">Know Before You Go</h2>
 
-    <div class="data-tabs">
-      <button class="tab-btn active" data-tab="busyness">Crowd Level</button>
-      <button class="tab-btn" data-tab="ratings">Ratings Breakdown</button>
-      <button class="tab-btn" data-tab="social">Social Pulse</button>
-    </div>
-
-    <div class="tab-content active" id="tab-busyness">
-      <div class="chart-wrapper">
-        <div class="day-selector">
-          <button class="day-btn active" data-day="0">Mon</button>
-          <button class="day-btn" data-day="1">Tue</button>
-          <button class="day-btn" data-day="2">Wed</button>
-          <button class="day-btn" data-day="3">Thu</button>
-          <button class="day-btn" data-day="4">Fri</button>
-          <button class="day-btn" data-day="5">Sat</button>
-          <button class="day-btn" data-day="6">Sun</button>
+    <div class="data-grid">
+      <!-- CROWD METER -->
+      <div class="data-card crowd-card">
+        <div class="dc-header">
+          <span class="dc-label">Live Crowd Estimate</span>
+          <span class="dc-live-dot"></span>
         </div>
-        <div class="bar-chart" id="bar-chart"></div>
-        <div class="chart-note">Based on Google Maps Popular Times data</div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="tab-ratings">
-      <div class="ratings-panel">
-        <div class="rating-big">4.0</div>
-        <div class="rating-stars-big">
-          <span class="star filled"></span><span class="star filled"></span><span class="star filled"></span><span class="star filled"></span><span class="star empty"></span>
-        </div>
-        <p class="rating-source">Google Maps</p>
-        <div class="rating-bars">
-          <div class="rbar-row"><span>5</span><div class="rbar-track"><div class="rbar-fill" style="width:45%"></div></div><span>45%</span></div>
-          <div class="rbar-row"><span>4</span><div class="rbar-track"><div class="rbar-fill" style="width:30%"></div></div><span>30%</span></div>
-          <div class="rbar-row"><span>3</span><div class="rbar-track"><div class="rbar-fill" style="width:15%"></div></div><span>15%</span></div>
-          <div class="rbar-row"><span>2</span><div class="rbar-track"><div class="rbar-fill" style="width:6%"></div></div><span>6%</span></div>
-          <div class="rbar-row"><span>1</span><div class="rbar-track"><div class="rbar-fill" style="width:4%"></div></div><span>4%</span></div>
-        </div>
-        <div class="sentiment-tags">
-          <div class="s-tag positive">Good trainers</div>
-          <div class="s-tag positive">Clean space</div>
-          <div class="s-tag positive">Good equipment</div>
-          <div class="s-tag neutral">Crowded evenings</div>
-          <div class="s-tag positive">Value for money</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="tab-social">
-      <div class="social-stats">
-        <div class="social-card">
-          <div class="social-icon fb">f</div>
-          <div class="social-info">
-            <span class="social-num">768</span>
-            <span class="social-label">Page Likes</span>
+        <div class="crowd-meter-wrap">
+          <div class="crowd-arc-container">
+            <svg viewBox="0 0 200 110" class="crowd-arc-svg">
+              <path d="M20,100 A90,90 0 0,1 180,100" fill="none" stroke="#1e1e1e" stroke-width="18" stroke-linecap="round"/>
+              <path id="crowd-arc-fill" d="M20,100 A90,90 0 0,1 180,100" fill="none" stroke="#D62828" stroke-width="18" stroke-linecap="round"
+                stroke-dasharray="282.74" stroke-dashoffset="282.74"/>
+            </svg>
+            <div class="crowd-center">
+              <span id="crowd-pct">--</span>
+              <span class="crowd-sub" id="crowd-label">Loading...</span>
+            </div>
           </div>
         </div>
-        <div class="social-card">
-          <div class="social-icon fb">f</div>
-          <div class="social-info">
-            <span class="social-num">134</span>
-            <span class="social-label">Talking About</span>
-          </div>
-        </div>
-        <div class="social-card">
-          <div class="social-icon gm">G</div>
-          <div class="social-info">
-            <span class="social-num">4.0</span>
-            <span class="social-label">Google Rating</span>
-          </div>
+        <div class="crowd-tags">
+          <span class="ctag green">Best: 6–9 AM</span>
+          <span class="ctag yellow">Busy: 5–8 PM</span>
+          <span class="ctag red">Peak: 7–8 PM</span>
         </div>
       </div>
-      <div class="social-quote">
-        "Don't limit your challenges. Challenge your limits."
-        <span>— RDDL Official</span>
+
+      <!-- POPULAR TIMES CHART -->
+      <div class="data-card">
+        <div class="dc-header"><span class="dc-label">Popular Times</span></div>
+        <div class="pop-day-row">
+          <button class="pd active" data-d="0">M</button>
+          <button class="pd" data-d="1">T</button>
+          <button class="pd" data-d="2">W</button>
+          <button class="pd" data-d="3">T</button>
+          <button class="pd" data-d="4">F</button>
+          <button class="pd" data-d="5">S</button>
+          <button class="pd" data-d="6">S</button>
+        </div>
+        <div class="pop-chart" id="pop-chart"></div>
+        <div class="pop-x-labels">
+          <span>6AM</span><span>9AM</span><span>12PM</span><span>3PM</span><span>6PM</span><span>9PM</span>
+        </div>
+      </div>
+
+      <!-- RATING CARD -->
+      <div class="data-card">
+        <div class="dc-header"><span class="dc-label">Google Reviews</span></div>
+        <div class="rating-display">
+          <div class="rd-score">4.0</div>
+          <div class="rd-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+          <div class="rd-count">Based on Google Maps</div>
+        </div>
+        <div class="rb-list">
+          <div class="rb"><span>5</span><div class="rbt"><div class="rbf" style="width:45%"></div></div><span>45%</span></div>
+          <div class="rb"><span>4</span><div class="rbt"><div class="rbf" style="width:30%"></div></div><span>30%</span></div>
+          <div class="rb"><span>3</span><div class="rbt"><div class="rbf" style="width:15%"></div></div><span>15%</span></div>
+          <div class="rb"><span>2</span><div class="rbt"><div class="rbf" style="width:6%"></div></div><span>6%</span></div>
+          <div class="rb"><span>1</span><div class="rbt"><div class="rbf" style="width:4%"></div></div><span>4%</span></div>
+        </div>
+        <div class="kw-tags">
+          <span class="kw">Clean</span><span class="kw">Good Trainers</span><span class="kw">Value</span><span class="kw">Equipment</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
+<!-- ═══════════════ REVIEWS ═══════════════ -->
 <section id="reviews">
   <div class="container">
-    <p class="section-eyebrow center">Verified Reviews</p>
-    <h2 class="section-title center">What Members Say</h2>
-    <div class="reviews-track-wrapper">
-      <div class="reviews-track" id="reviews-track">
-        <!-- Injected by JS -->
-      </div>
+    <p class="eyebrow center">Verified</p>
+    <h2 class="sec-title center">Member Voices</h2>
+    <div class="rev-carousel-wrap">
+      <div class="rev-track" id="rev-track"></div>
     </div>
-    <div class="reviews-nav">
-      <button id="rev-prev" class="rev-btn">&#8592;</button>
+    <div class="rev-nav">
+      <button class="rev-arrow" id="rev-prev">&#8592;</button>
       <div class="rev-dots" id="rev-dots"></div>
-      <button id="rev-next" class="rev-btn">&#8594;</button>
+      <button class="rev-arrow" id="rev-next">&#8594;</button>
     </div>
   </div>
 </section>
 
-<!-- LOCATION -->
+<!-- ═══════════════ LOCATION ═══════════════ -->
 <section id="location">
   <div class="container">
-    <p class="section-eyebrow center">Find Us</p>
-    <h2 class="section-title center">Location</h2>
-    <div class="location-grid">
-      <div class="map-embed">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.316719812423!2d90.35368!3d23.82371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1005821a5b3%3A0xa76550a237f94560!2sRDDL%20Fitness%20Zone!5e0!3m2!1sen!2sbd!4v1714481358999!5m2!1sen!2sbd"
-          width="100%" height="420" style="border:0;border-radius:8px;" allowfullscreen="" loading="lazy">
-        </iframe>
+    <p class="eyebrow center">Find Us</p>
+    <h2 class="sec-title center">We Are In Mirpur</h2>
+    <div class="loc-grid">
+      <div class="loc-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.316719812423!2d90.35368!3d23.82371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1005821a5b3%3A0xa76550a237f94560!2sRDDL%20Fitness%20Zone!5e0!3m2!1sen!2sbd!4v1714481358999!5m2!1sen!2sbd"
+          width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
-      <div class="location-info">
-        <div class="loc-block">
-          <h4>Address</h4>
-          <p>RDDL Fitness Zone<br>Mirpur, Dhaka, Bangladesh<br>23.8237 N, 90.3537 E</p>
-        </div>
-        <div class="loc-block">
-          <h4>Hours</h4>
-          <p>Saturday — Thursday: 6 AM – 10 PM<br>Friday: Closed / Limited Hours</p>
-        </div>
-        <div class="loc-block">
-          <h4>Nearby</h4>
-          <ul class="nearby-list">
+      <div class="loc-info">
+        <div class="li-block"><div class="li-label">Address</div><p>RDDL Fitness Zone<br>Mirpur, Dhaka, Bangladesh</p></div>
+        <div class="li-block"><div class="li-label">Hours</div><p>Sat–Thu: 6:00 AM – 10:00 PM<br>Friday: Limited Hours</p></div>
+        <div class="li-block"><div class="li-label">Nearby (within 1 km)</div>
+          <ul class="nearby">
             <li>Mirpur DOHS — 0.5 km</li>
             <li>Mirpur 12 Bus Stand — 0.8 km</li>
             <li>Pallabi Metro Station — 1.0 km</li>
           </ul>
         </div>
-        <a href="https://www.google.com/maps/place/RDDL+Fitness+Zone/@23.8237099,90.3536836,17z" target="_blank" class="btn-primary mt20">Get Directions</a>
+        <a href="https://www.google.com/maps/place/RDDL+Fitness+Zone/@23.8237099,90.3536836,17z" target="_blank" class="btn-red mt20">Get Directions</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo">RDDL</div>
-    <p class="footer-tag">Forge Your Legacy</p>
-    <div class="footer-links">
+  <div class="ft-inner">
+    <div class="ft-logo">RDDL</div>
+    <p class="ft-line">Forge Your Legacy — Mirpur, Dhaka</p>
+    <div class="ft-links">
       <a href="https://www.facebook.com/Rddlfitnesszone/" target="_blank">Facebook</a>
-      <a href="https://www.google.com/maps/place/RDDL+Fitness+Zone/@23.8237099,90.3536836,17z" target="_blank">Google Maps</a>
+      <a href="https://www.google.com/maps/place/RDDL+Fitness+Zone" target="_blank">Google Maps</a>
       <a href="admin.html">Admin</a>
     </div>
-    <p class="footer-copy">&copy; 2026 RDDL Fitness Zone. All rights reserved.</p>
+    <p class="ft-copy">&copy; 2026 RDDL Fitness Zone. All rights reserved.</p>
   </div>
 </footer>
 
