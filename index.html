@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDDL Fitness Zone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">RDDL FITNESS ZONE</div>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#stats">Stats</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#location">Location</a>
+            <a href="admin.html" class="admin-btn">Admin</a>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="hero-content">
+            <h1 id="hero-title">Challenge Your Limits</h1>
+            <p id="hero-subtitle">The harder the battle, the sweeter the victory.</p>
+            <a href="#location" class="cta-btn">Join Now</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-grid">
+            <div class="about-text" id="about-desc">
+                Welcome to RDDL Fitness Zone. We offer state-of-the-art machines, experienced trainers, and a motivating environment to help you achieve your fitness goals.
+            </div>
+            <div class="about-image">
+                <img id="about-img" src="https://scontent.fdac19-1.fna.fbcdn.net/v/t39.30808-1/510406336_122104530668916170_3670593091723106690_n.jpg?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=3ab345&_nc_ohc=6jNR-_TpY5EQ7kNvwE6H_Et&_nc_ht=scontent.fdac19-1.fna&oh=00_Af6FzcGYZFyWBYu3Y4XOcTuafq9MXId4pV6zjB2v7YEp1g&oe=69FAA939" alt="RDDL Gym Floor">
+            </div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <h2>Popular Times</h2>
+        <p>Stats of people being there at different times of the day</p>
+        <div class="chart-container">
+            <div class="bar" style="height: 20%;"><span class="time">6 AM</span></div>
+            <div class="bar" style="height: 40%;"><span class="time">8 AM</span></div>
+            <div class="bar" style="height: 30%;"><span class="time">10 AM</span></div>
+            <div class="bar" style="height: 50%;"><span class="time">12 PM</span></div>
+            <div class="bar" style="height: 60%;"><span class="time">4 PM</span></div>
+            <div class="bar" style="height: 90%;"><span class="time">6 PM</span></div>
+            <div class="bar" style="height: 80%;"><span class="time">8 PM</span></div>
+            <div class="bar" style="height: 40%;"><span class="time">10 PM</span></div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2>Social Media Reviews</h2>
+        <div class="reviews-grid" id="reviews-container">
+            <!-- Reviews injected by JS -->
+        </div>
+    </section>
+
+    <section id="location">
+        <h2>Location & Nearby Places</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.316719812423!2d90.3536836!3d23.8237099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c1005821a5b3%3A0xa76550a237f94560!2sRDDL%20Fitness%20Zone!5e0!3m2!1sen!2sbd!4v1714481358999!5m2!1sen!2sbd" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="nearby-places">
+                <h3>Places within 1km</h3>
+                <ul>
+                    <li>Mirpur DOHS - 0.5 km</li>
+                    <li>Mirpur 12 Bus Stand - 0.8 km</li>
+                    <li>Pallabi Metro Station - 1.0 km</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 RDDL Fitness Zone. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMS - RDDL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    <div class="cms-container">
+        <h2>Content Management System</h2>
+        
+        <div class="cms-section">
+            <h3>Homepage Hero</h3>
+            <input type="text" id="cms-hero-title" placeholder="Hero Title">
+            <input type="text" id="cms-hero-subtitle" placeholder="Hero Subtitle">
+        </div>
+
+        <div class="cms-section">
+            <h3>About Section</h3>
+            <textarea id="cms-about-desc" placeholder="About Description"></textarea>
+            <input type="text" id="cms-about-img" placeholder="About Image URL">
+        </div>
+
+        <button class="save-btn" onclick="saveData()">Save Changes</button>
+        <br><br>
+        <a href="index.html" style="color:var(--primary);">Back to Site</a>
+    </div>
+
+    <script src="cms.js"></script>
+</body>
+</html>
