@@ -57,13 +57,78 @@
 </section>
 
 
-<!-- ═══════════════ MUSCLE WIKI EMBED ═══════════════ -->
-<section id="muscle-map">
-  <div class="container" style="max-width: 100%; padding: 0;">
-    <p class="eyebrow center" style="margin-top: 40px;">Interactive Training</p>
+<!-- ═══════════════ MUSCLE MAP ═══════════════ -->
+<section id="muscle-map" style="position:relative; overflow:hidden;">
+  <!-- Cutout repositioned here -->
+  <img src="images/cutout.png" alt="RDDL Trainer" class="map-cutout">
+  
+  <div class="container" style="position:relative; z-index:2;">
+    <p class="eyebrow center">Interactive Training</p>
     <h2 class="sec-title center">What Do You Want<br>To Train Today?</h2>
-    <div style="width: 100%; height: 800px; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-      <iframe src="https://musclewiki.com/" width="100%" height="100%" style="border:none;"></iframe>
+    
+    <div class="muscle-layout">
+      <div class="muscle-svg-wrap">
+        <div class="body-view-tabs">
+          <button class="bv-btn active" data-view="front">Front</button>
+          <button class="bv-btn" data-view="back">Back</button>
+        </div>
+        <div class="body-diagram" id="body-diagram">
+          <!-- FRONT VIEW -->
+          <svg id="svg-front" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="150" cy="55" rx="38" ry="42" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <rect x="136" y="88" width="28" height="20" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <path d="M95,108 Q150,100 205,108 L215,175 Q150,185 85,175 Z" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="chest" id="z-chest"/>
+            <ellipse cx="82" cy="120" rx="22" ry="30" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="shoulders" id="z-shoulder-l"/>
+            <ellipse cx="218" cy="120" rx="22" ry="30" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="shoulders" id="z-shoulder-r"/>
+            <path d="M115,175 Q150,170 185,175 L190,265 Q150,270 110,265 Z" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="abs" id="z-abs"/>
+            <ellipse cx="68" cy="170" rx="16" ry="35" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="biceps" id="z-bicep-l"/>
+            <ellipse cx="232" cy="170" rx="16" ry="35" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="biceps" id="z-bicep-r"/>
+            <ellipse cx="60" cy="235" rx="13" ry="30" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="forearms" id="z-fore-l"/>
+            <ellipse cx="240" cy="235" rx="13" ry="30" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="forearms" id="z-fore-r"/>
+            <ellipse cx="125" cy="340" rx="30" ry="60" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="quads" id="z-quad-l"/>
+            <ellipse cx="175" cy="340" rx="30" ry="60" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="quads" id="z-quad-r"/>
+            <ellipse cx="120" cy="470" rx="18" ry="40" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="calves" id="z-calf-l"/>
+            <ellipse cx="180" cy="470" rx="18" ry="40" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="calves" id="z-calf-r"/>
+            <text x="150" y="148" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">CHEST</text>
+            <text x="150" y="222" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">ABS</text>
+            <text x="68" y="175" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">BI</text>
+            <text x="232" y="175" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">BI</text>
+            <text x="125" y="344" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">QUAD</text>
+            <text x="175" y="344" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">QUAD</text>
+          </svg>
+          <!-- BACK VIEW -->
+          <svg id="svg-back" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg" style="display:none">
+            <ellipse cx="150" cy="55" rx="38" ry="42" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <rect x="136" y="88" width="28" height="20" rx="4" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <path d="M110,95 Q150,88 190,95 L200,130 Q150,125 100,130 Z" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="traps" id="z-traps"/>
+            <path d="M90,130 Q110,155 115,195 L95,200 Q70,160 75,130 Z" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="lats" id="z-lat-l"/>
+            <path d="M210,130 Q190,155 185,195 L205,200 Q230,160 225,130 Z" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="lats" id="z-lat-r"/>
+            <path d="M115,130 Q150,125 185,130 L185,195 Q150,200 115,195 Z" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="midback" id="z-midback"/>
+            <ellipse cx="68" cy="165" rx="16" ry="35" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="triceps" id="z-tri-l"/>
+            <ellipse cx="232" cy="165" rx="16" ry="35" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="triceps" id="z-tri-r"/>
+            <path d="M110,265 Q150,260 190,265 L190,320 Q150,330 110,320 Z" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="glutes" id="z-glutes"/>
+            <ellipse cx="125" cy="370" rx="28" ry="52" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="hamstrings" id="z-ham-l"/>
+            <ellipse cx="175" cy="370" rx="28" ry="52" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="hamstrings" id="z-ham-r"/>
+            <ellipse cx="122" cy="478" rx="18" ry="38" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="calves" id="z-calf-bl"/>
+            <ellipse cx="178" cy="478" rx="18" ry="38" fill="#1a1a1a" stroke="#333" stroke-width="1" class="muscle-zone" data-muscle="calves" id="z-calf-br"/>
+            <text x="150" y="115" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">TRAPS</text>
+            <text x="150" y="165" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">LATS</text>
+            <text x="150" y="295" text-anchor="middle" fill="#555" font-size="9" font-family="Inter">GLUTES</text>
+            <text x="150" y="375" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">HAMS</text>
+            <text x="68" y="170" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">TRI</text>
+            <text x="232" y="170" text-anchor="middle" fill="#555" font-size="8" font-family="Inter">TRI</text>
+          </svg>
+        </div>
+        <div style="margin-top:24px; text-align:center;">
+          <a href="https://musclewiki.com/" target="_blank" class="btn-outline" style="width:100%; border-color:var(--red); color:var(--red);">Open MuscleWiki Tracker</a>
+        </div>
+      </div>
+      <div class="muscle-info-panel" id="muscle-info-panel">
+        <div class="mip-placeholder">
+          <div class="mip-icon">+</div>
+          <p>Tap a muscle group<br>to see exercises</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
