@@ -31,6 +31,10 @@ function loadCMS() {
   document.getElementById('cms-hero-sub').value = data.heroSub;
   document.getElementById('cms-about1').value = data.about1;
   document.getElementById('cms-about2').value = data.about2;
+  
+  const fbEmbed = localStorage.getItem('rddlFbEmbed') || '';
+  document.getElementById('cms-fb-embed').value = fbEmbed;
+  
   renderReviewMgmt();
 }
 
@@ -77,6 +81,10 @@ function saveAll() {
     about2: document.getElementById('cms-about2').value
   };
   localStorage.setItem('rddlCMS', JSON.stringify(data));
+  
+  const fbEmbed = document.getElementById('cms-fb-embed').value;
+  localStorage.setItem('rddlFbEmbed', fbEmbed);
+  
   const msg = document.getElementById('save-msg');
   msg.style.opacity = '1';
   setTimeout(() => { msg.style.opacity = '0'; }, 2000);

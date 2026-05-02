@@ -109,54 +109,51 @@ document.querySelectorAll('.eq-filter').forEach(btn => {
   });
 });
 
-// ══ MUSCLE MAP ═══════════════════════════════════════
-document.querySelectorAll('.bv-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.bv-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('svg-front').style.display = btn.dataset.view === 'front' ? 'block' : 'none';
-    document.getElementById('svg-back').style.display = btn.dataset.view === 'back' ? 'block' : 'none';
-    document.querySelectorAll('.muscle-zone').forEach(z => z.classList.remove('active'));
-    document.getElementById('muscle-info-panel').innerHTML = `<div class="mip-placeholder"><div class="mip-icon">+</div><p>Tap a muscle group<br>to see exercises</p></div>`;
-  });
-});
+// ══ MUSCLE WIKI GRID ════════════════════════════════════
+const mwData = [
+  { name: 'Chest', desc: 'Pectorals, Upper & Lower Chest', link: 'https://musclewiki.com/directory/chest' },
+  { name: 'Shoulders', desc: 'Deltoids: Front, Lateral, Rear', link: 'https://musclewiki.com/directory/shoulders' },
+  { name: 'Biceps', desc: 'Biceps Brachii & Brachialis', link: 'https://musclewiki.com/directory/biceps' },
+  { name: 'Triceps', desc: 'Triceps Brachii, all 3 heads', link: 'https://musclewiki.com/directory/triceps' },
+  { name: 'Back', desc: 'Lats, Rhomboids, Traps, Lower Back', link: 'https://musclewiki.com/directory/back' },
+  { name: 'Legs', desc: 'Quads, Hamstrings, Glutes, Calves', link: 'https://musclewiki.com/directory/legs' },
+  { name: 'Core', desc: 'Abs and Obliques', link: 'https://musclewiki.com/directory/core' },
+  { name: 'Forearms', desc: 'Wrist flexors and extensors', link: 'https://musclewiki.com/directory/forearms' }
+];
 
-document.querySelectorAll('.muscle-zone').forEach(zone => {
-  zone.addEventListener('click', function() {
-    document.querySelectorAll('.muscle-zone').forEach(z => z.classList.remove('active'));
-    this.classList.add('active');
-    const muscle = this.dataset.muscle;
-    const data = muscleData[muscle];
-    if (!data) return;
-    const panel = document.getElementById('muscle-info-panel');
-    panel.innerHTML = `
-      <div class="mip-title">${data.name}</div>
-      <div class="mip-sub">RDDL Equipment & Exercises</div>
-      <div class="mip-machines">
-        <h4>Machines at RDDL</h4>
-        <div class="mip-machine-list">
-          ${data.machines.map(m => `
-            <div class="mip-machine">
-              <div class="mip-machine-icon">M</div>
-              <div class="mip-machine-info">
-                <div class="mip-machine-name">${m.n}</div>
-                <div class="mip-machine-desc">${m.d}</div>
-              </div>
-            </div>`).join('')}
-        </div>
+const mwGrid = document.getElementById('mw-grid');
+if (mwGrid) {
+  mwGrid.innerHTML = mwData.map(m => `
+    <div class="mw-card editable-block">
+      <div>
+        <div class="mw-title" contenteditable="false">${m.name}</div>
+        <div class="mw-desc" contenteditable="false">${m.desc}</div>
       </div>
-      <div class="mip-exercises">
-        <h4>Recommended Exercises</h4>
-        <div class="mip-ex-list">
-          ${data.exercises.map(ex => `
-            <div class="mip-ex">
-              <div class="mip-ex-name">${ex.n}</div>
-              <div class="mip-ex-sets">${ex.s}</div>
-            </div>`).join('')}
-        </div>
-      </div>`;
+      <a href="${m.link}" target="_blank" class="mw-btn">View Exercises</a>
+    </div>
+  `).join('');
+}
+
+// ══ FB EMBED ═════════════════════════════════════════
+function renderFbEmbed() {
+  const container = document.getElementById('fb-embed-container');
+  if (!container) return;
+  const savedEmbed = localStorage.getItem('rddlFbEmbed') || '<p style="color:var(--gray)">No update posted yet.</p>';
+  container.innerHTML = savedEmbed;
+}
+renderFbEmbed();
+
+// ══ ADMIN MODE INIT ══════════════════════════════════
+if (localStorage.getItem('rddlAdmin') === 'true') {
+  document.body.classList.add('admin-mode');
+  // Make heroes and titles editable
+  document.querySelectorAll('h1, h2, p').forEach(el => el.setAttribute('contenteditable', 'true'));
+  // Make sections resizable
+  document.querySelectorAll('section, .editable-block').forEach(el => {
+    el.classList.add('editable-block');
   });
-});
+  console.log('Admin mode active: Drag to resize enabled on .editable-block, text is editable.');
+}
 
 // ══ CROWD METER ═══════════════════════════════════════
 function getCurrentCrowd() {

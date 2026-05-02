@@ -147,14 +147,35 @@ ul{list-style:none}
 .mip-machine{background:var(--s2);border:1px solid var(--border);padding:16px;display:flex;align-items:center;gap:16px;cursor:default;transition:border-color .2s}
 .mip-machine:hover{border-color:var(--red)}
 .mip-machine-icon{width:40px;height:40px;background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:18px;flex-shrink:0}
-.mip-machine-info{flex:1}
-.mip-machine-name{font-size:14px;font-weight:600}
-.mip-machine-desc{font-size:12px;color:var(--gray);margin-top:2px}
-.mip-exercises h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-bottom:16px}
-.mip-ex-list{display:flex;flex-direction:column;gap:8px}
-.mip-ex{background:var(--s2);border-left:3px solid var(--red);padding:12px 16px}
-.mip-ex-name{font-size:14px;font-weight:600}
-.mip-ex-sets{font-size:11px;color:var(--gray);margin-top:2px}
+.mw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.mw-card{background:var(--s2);border:1px solid var(--border);padding:24px;transition:all .3s;display:flex;flex-direction:column;justify-content:space-between;min-height:180px}
+.mw-card:hover{border-color:var(--red);transform:translateY(-4px)}
+.mw-title{font-family:var(--ff-display);font-size:28px;letter-spacing:1px;margin-bottom:8px}
+.mw-desc{font-size:12px;color:var(--gray);margin-bottom:20px;line-height:1.5}
+.mw-btn{display:inline-block;padding:10px 16px;background:rgba(214,40,40,0.1);color:var(--red);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--red);text-align:center;transition:all .2s}
+.mw-btn:hover{background:var(--red);color:#fff}
+
+/* Admin Edit Mode */
+body.admin-mode .editable-block {
+  border: 1px dashed var(--gray);
+  position: relative;
+  resize: both;
+  overflow: auto;
+  min-height: 50px;
+}
+body.admin-mode .editable-block::after {
+  content: 'Editable';
+  position: absolute;
+  top: 0; right: 0;
+  background: var(--red);
+  color: #fff;
+  font-size: 9px;
+  padding: 2px 6px;
+}
+body.admin-mode [contenteditable="true"] {
+  outline: 1px dashed var(--red);
+  background: rgba(214,40,40,0.05);
+}
 
 /* ══ EQUIPMENT ═══════════════════════════════════════ */
 #equipment{padding:120px 0;background:var(--s1)}
