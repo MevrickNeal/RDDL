@@ -112,13 +112,20 @@ document.querySelectorAll('.eq-filter').forEach(btn => {
 // ══ MUSCLE WIKI GRID ════════════════════════════════════
 const mwData = [
   { name: 'Chest', desc: 'Pectorals, Upper & Lower Chest', link: 'https://musclewiki.com/exercises/male/chest' },
-  { name: 'Shoulders', desc: 'Deltoids: Front, Lateral, Rear', link: 'https://musclewiki.com/exercises/male/shoulders' },
+  { name: 'Front Shoulders', desc: 'Anterior & Lateral Deltoids', link: 'https://musclewiki.com/exercises/male/front-deltoids' },
+  { name: 'Rear Shoulders', desc: 'Posterior Deltoids', link: 'https://musclewiki.com/exercises/male/rear-deltoids' },
+  { name: 'Traps', desc: 'Upper Trapezius', link: 'https://musclewiki.com/exercises/male/traps' },
+  { name: 'Traps Middle', desc: 'Mid Trapezius & Rhomboids', link: 'https://musclewiki.com/exercises/male/traps-middle' },
+  { name: 'Lats', desc: 'Latissimus Dorsi', link: 'https://musclewiki.com/exercises/male/lats' },
+  { name: 'Lower Back', desc: 'Erector Spinae', link: 'https://musclewiki.com/exercises/male/lowerback' },
   { name: 'Biceps', desc: 'Biceps Brachii & Brachialis', link: 'https://musclewiki.com/exercises/male/biceps' },
-  { name: 'Triceps', desc: 'Triceps Brachii, all 3 heads', link: 'https://musclewiki.com/exercises/male/triceps' },
-  { name: 'Back', desc: 'Lats, Rhomboids, Traps, Lower Back', link: 'https://musclewiki.com/exercises/male/lats' },
-  { name: 'Legs', desc: 'Quads, Hamstrings, Glutes, Calves', link: 'https://musclewiki.com/exercises/male/quadriceps' },
-  { name: 'Core', desc: 'Abs and Obliques', link: 'https://musclewiki.com/exercises/male/abdominals' },
-  { name: 'Forearms', desc: 'Wrist flexors and extensors', link: 'https://musclewiki.com/exercises/male/forearms' }
+  { name: 'Triceps', desc: 'Triceps Brachii', link: 'https://musclewiki.com/exercises/male/triceps' },
+  { name: 'Forearms', desc: 'Wrist flexors & extensors', link: 'https://musclewiki.com/exercises/male/forearms' },
+  { name: 'Abs', desc: 'Rectus Abdominis', link: 'https://musclewiki.com/exercises/male/abdominals' },
+  { name: 'Obliques', desc: 'Side Abdominals', link: 'https://musclewiki.com/exercises/male/obliques' },
+  { name: 'Quads', desc: 'Quadriceps Femoris', link: 'https://musclewiki.com/exercises/male/quads' },
+  { name: 'Hamstrings', desc: 'Biceps Femoris', link: 'https://musclewiki.com/exercises/male/hamstrings' },
+  { name: 'Glutes', desc: 'Gluteus Maximus', link: 'https://musclewiki.com/exercises/male/glutes' }
 ];
 
 const mwGrid = document.getElementById('mw-grid');
