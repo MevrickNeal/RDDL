@@ -91,3 +91,65 @@ function saveAll() {
 }
 
 document.addEventListener('DOMContentLoaded', loadCMS);
+
+// ══ VISUAL EDITOR ═════════════════════════════════════
+function initVisualEditor() {
+  const frame = document.getElementById('visual-frame');
+  if (!frame || !frame.contentDocument) return alert('Please wait for iframe to load or run on a local server.');
+  const doc = frame.contentDocument;
+  
+  // Inject Admin CSS into iframe
+  const style = doc.createElement('style');
+  style.innerHTML = `
+    .editable-block { border: 1px dashed var(--gray); position: relative; resize: both; overflow: auto; min-height: 50px; }
+    .editable-block::after { content: 'Editable'; position: absolute; top: 0; right: 0; background: var(--red); color: #fff; font-size: 9px; padding: 2px 6px; }
+    [contenteditable="true"] { outline: 1px dashed var(--red); background: rgba(214,40,40,0.05); }
+  `;
+  doc.head.appendChild(style);
+
+  // Make text editable
+  doc.querySelectorAll('.hero-title, .hero-sub, .sec-title, p').forEach(el => {
+    el.setAttribute('contenteditable', 'true');
+  });
+
+  // Make sections and elements resizable by adding .editable-block and an ID if missing
+  let blockCount = 0;
+  doc.querySelectorAll('section, .map-cutout, .eq-card').forEach(el => {
+    if (!el.id) el.id = 'visual-block-' + (++blockCount);
+    el.classList.add('editable-block');
+  });
+}
+
+function saveVisuals() {
+  const frame = document.getElementById('visual-frame');
+  if (!frame || !frame.contentDocument) return;
+  const doc = frame.contentDocument;
+  
+  // Save overrides map
+  const overrides = {};
+  doc.querySelectorAll('.editable-block').forEach(el => {
+    if (el.id && el.style.cssText) {
+      overrides['#' + el.id] = el.style.cssText;
+    }
+  });
+  
+  localStorage.setItem('rddlVisual', JSON.stringify(overrides));
+  
+  // We can also save text edits made visually
+  const hTitle = doc.querySelector('.hero-title');
+  const hSub = doc.querySelector('.hero-sub');
+  
+  const data = JSON.parse(localStorage.getItem('rddlCMS') || '{}');
+  if (hTitle) data.heroTitle = hTitle.innerHTML;
+  if (hSub) data.heroSub = hSub.innerHTML;
+  
+  localStorage.setItem('rddlCMS', JSON.stringify(data));
+  
+  // Update CMS text fields to match visual edits
+  if (hTitle) document.getElementById('cms-hero-title').value = hTitle.innerHTML;
+  if (hSub) document.getElementById('cms-hero-sub').value = hSub.innerHTML;
+  
+  const msg = document.getElementById('visual-save-msg');
+  msg.style.opacity = '1';
+  setTimeout(() => { msg.style.opacity = '0'; }, 2000);
+}

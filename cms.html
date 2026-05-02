@@ -116,7 +116,21 @@
       </div>
     </div>
 
-    <button class="btn-primary" onclick="saveAll()" style="padding:16px 48px;">Save All Changes</button>
+    <!-- Visual Editor -->
+    <div class="cms-section" style="padding: 0; overflow: hidden; border: 2px solid var(--red);">
+      <h3 style="padding: 24px 24px 0;">Visual Builder</h3>
+      <p style="font-size: 11px; color: var(--gray); padding: 0 24px 16px;">Hover over sections to drag, resize, and edit text directly. Click "Save Visual Layout" to apply to the live site.</p>
+      <div style="background:#fff; height: 600px; position:relative;">
+        <iframe id="visual-frame" src="index.html" style="width:100%; height:100%; border:none;"></iframe>
+      </div>
+      <div style="padding: 16px 24px; background: var(--s2); border-top: 1px solid var(--border); display:flex; gap:16px;">
+        <button class="btn-primary" onclick="initVisualEditor()" style="font-size:11px;">1. Enable Edit Mode</button>
+        <button class="btn-outline" onclick="saveVisuals()" style="font-size:11px;">2. Save Visual Layout</button>
+        <span id="visual-save-msg" style="font-size: 11px; color: #44cc44; letter-spacing: 2px; margin-left: 16px; opacity: 0; transition: opacity .3s; align-self: center;">Layout Saved.</span>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="saveAll()" style="padding:16px 48px;">Save All Text Changes</button>
     <span id="save-msg">Saved.</span>
   </div>
 

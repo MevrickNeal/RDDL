@@ -143,16 +143,22 @@ function renderFbEmbed() {
 }
 renderFbEmbed();
 
-// ══ ADMIN MODE INIT ══════════════════════════════════
-if (localStorage.getItem('rddlAdmin') === 'true') {
-  document.body.classList.add('admin-mode');
-  // Make heroes and titles editable
-  document.querySelectorAll('h1, h2, p').forEach(el => el.setAttribute('contenteditable', 'true'));
-  // Make sections resizable
-  document.querySelectorAll('section, .editable-block').forEach(el => {
-    el.classList.add('editable-block');
-  });
-  console.log('Admin mode active: Drag to resize enabled on .editable-block, text is editable.');
+// ══ CMS APPLICATOR ═════════════════════════════════════
+const cmsData = JSON.parse(localStorage.getItem('rddlCMS'));
+if (cmsData) {
+  const hTitle = document.querySelector('.hero-title');
+  if (hTitle && cmsData.heroTitle) hTitle.innerHTML = cmsData.heroTitle;
+  const hSub = document.querySelector('.hero-sub');
+  if (hSub && cmsData.heroSub) hSub.innerHTML = cmsData.heroSub;
+  
+  // Apply visual overrides
+  const overrides = JSON.parse(localStorage.getItem('rddlVisual') || '{}');
+  for (const [selector, cssText] of Object.entries(overrides)) {
+    const el = document.querySelector(selector);
+    if (el) {
+      el.style.cssText += cssText;
+    }
+  }
 }
 
 // ══ CROWD METER ═══════════════════════════════════════
