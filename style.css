@@ -207,18 +207,19 @@ ul{list-style:none}
 .dc-live-dot{width:8px;height:8px;border-radius:50%;background:#44cc44;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)}}
 
-/* Crowd meter arc */
-.crowd-meter-wrap{display:flex;justify-content:center;margin-bottom:20px}
-.crowd-arc-container{position:relative;width:200px}
-.crowd-arc-svg{width:200px;height:110px}
-.crowd-center{position:absolute;bottom:0;left:0;right:0;text-align:center;padding-bottom:8px}
-#crowd-pct{font-family:var(--ff-display);font-size:48px;line-height:1;color:var(--white);display:block}
-.crowd-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);display:block}
-.crowd-tags{display:flex;flex-direction:column;gap:8px}
-.ctag{font-size:11px;font-weight:600;letter-spacing:1px;padding:8px 12px;border-radius:2px}
-.ctag.green{background:rgba(68,204,68,0.1);color:#44cc44;border-left:3px solid #44cc44}
-.ctag.yellow{background:rgba(255,200,0,0.1);color:#ffc800;border-left:3px solid #ffc800}
-.ctag.red{background:rgba(214,40,40,0.1);color:var(--red);border-left:3px solid var(--red)}
+/* Cyber Crowd Meter */
+.crowd-meter-wrap{margin-bottom:20px}
+.cyber-value { font-family:var(--ff-display); font-size:64px; color:var(--white); line-height:0.8; text-shadow:0 0 15px rgba(214,40,40,0.3); }
+.cyber-label { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--red); }
+.cyber-meter { display:flex; gap:3px; height:60px; align-items:flex-end; margin-top:16px; }
+.cyber-bar { flex:1; background:var(--s3); transition:all .5s cubic-bezier(.22,1,.36,1); border-top:2px solid transparent; }
+.cyber-bar.active { background:rgba(214,40,40,0.15); border-top:2px solid var(--red); box-shadow:0 -5px 15px rgba(214,40,40,0.15); }
+
+.crowd-tags{display:flex;flex-direction:column;gap:6px}
+.ctag{font-size:10px;font-weight:600;letter-spacing:1px;padding:8px 12px;border:1px solid var(--border);background:transparent;text-transform:uppercase}
+.ctag.green{color:#44cc44; border-color:rgba(68,204,68,0.3); box-shadow:inset 0 0 10px rgba(68,204,68,0.05);}
+.ctag.yellow{color:#ffc800; border-color:rgba(255,200,0,0.3); box-shadow:inset 0 0 10px rgba(255,200,0,0.05);}
+.ctag.red{color:var(--red); border-color:rgba(214,40,40,0.3); box-shadow:inset 0 0 10px rgba(214,40,40,0.05);}
 
 /* Pop chart */
 .pop-day-row{display:flex;gap:4px;margin-bottom:16px}

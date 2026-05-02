@@ -148,16 +148,25 @@
           <span class="dc-live-dot"></span>
         </div>
         <div class="crowd-meter-wrap">
-          <div class="crowd-arc-container">
-            <svg viewBox="0 0 200 110" class="crowd-arc-svg">
-              <path d="M20,100 A90,90 0 0,1 180,100" fill="none" stroke="#1e1e1e" stroke-width="18" stroke-linecap="round"/>
-              <path id="crowd-arc-fill" d="M20,100 A90,90 0 0,1 180,100" fill="none" stroke="#D62828" stroke-width="18" stroke-linecap="round"
-                stroke-dasharray="282.74" stroke-dashoffset="282.74"/>
-            </svg>
-            <div class="crowd-center">
-              <span id="crowd-pct">--</span>
-              <span class="crowd-sub" id="crowd-label">Loading...</span>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+            <div>
+              <span id="crowd-pct" class="cyber-value">--</span>
             </div>
+            <div style="text-align:right;">
+              <span class="cyber-label" id="crowd-label">Loading...</span>
+            </div>
+          </div>
+          <div class="cyber-meter" id="cyber-meter">
+            <div class="cyber-bar" style="height:20%"></div>
+            <div class="cyber-bar" style="height:30%"></div>
+            <div class="cyber-bar" style="height:40%"></div>
+            <div class="cyber-bar" style="height:50%"></div>
+            <div class="cyber-bar" style="height:60%"></div>
+            <div class="cyber-bar" style="height:70%"></div>
+            <div class="cyber-bar" style="height:80%"></div>
+            <div class="cyber-bar" style="height:90%"></div>
+            <div class="cyber-bar" style="height:100%"></div>
+            <div class="cyber-bar" style="height:100%"></div>
           </div>
         </div>
         <div class="crowd-tags">

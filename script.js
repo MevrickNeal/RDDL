@@ -191,15 +191,25 @@ function updateCrowdMeter() {
   const { pct, label, color } = getCurrentCrowd();
   const pctEl = document.getElementById('crowd-pct');
   const lblEl = document.getElementById('crowd-label');
-  const arc = document.getElementById('crowd-arc-fill');
   if (!pctEl) return;
-  pctEl.textContent = pct + '%';
-  lblEl.textContent = label;
-  pctEl.style.color = color;
-  // Arc: total length ~282.74, offset from 282.74 down to (1 - pct/100)*282.74
-  const offset = 282.74 - (pct / 100) * 282.74;
-  arc.style.strokeDashoffset = offset;
-  arc.style.stroke = color;
+  
+  if (pct === 0) {
+    pctEl.textContent = '--';
+    lblEl.textContent = 'Closed';
+    lblEl.style.color = 'var(--gray)';
+  } else {
+    pctEl.textContent = pct + '%';
+    lblEl.textContent = label;
+    lblEl.style.color = 'var(--red)';
+  }
+  
+  // Fill Cyber Bars
+  const bars = document.querySelectorAll('.cyber-bar');
+  const activeCount = Math.ceil(pct / 10);
+  bars.forEach((bar, index) => {
+    if (index < activeCount) bar.classList.add('active');
+    else bar.classList.remove('active');
+  });
 }
 updateCrowdMeter();
 setInterval(updateCrowdMeter, 60000);
