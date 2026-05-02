@@ -111,14 +111,14 @@ document.querySelectorAll('.eq-filter').forEach(btn => {
 
 // ══ MUSCLE WIKI GRID ════════════════════════════════════
 const mwData = [
-  { name: 'Chest', desc: 'Pectorals, Upper & Lower Chest', link: 'https://musclewiki.com/directory/chest' },
-  { name: 'Shoulders', desc: 'Deltoids: Front, Lateral, Rear', link: 'https://musclewiki.com/directory/shoulders' },
-  { name: 'Biceps', desc: 'Biceps Brachii & Brachialis', link: 'https://musclewiki.com/directory/biceps' },
-  { name: 'Triceps', desc: 'Triceps Brachii, all 3 heads', link: 'https://musclewiki.com/directory/triceps' },
-  { name: 'Back', desc: 'Lats, Rhomboids, Traps, Lower Back', link: 'https://musclewiki.com/directory/back' },
-  { name: 'Legs', desc: 'Quads, Hamstrings, Glutes, Calves', link: 'https://musclewiki.com/directory/legs' },
-  { name: 'Core', desc: 'Abs and Obliques', link: 'https://musclewiki.com/directory/core' },
-  { name: 'Forearms', desc: 'Wrist flexors and extensors', link: 'https://musclewiki.com/directory/forearms' }
+  { name: 'Chest', desc: 'Pectorals, Upper & Lower Chest', link: 'https://musclewiki.com/exercises/male/chest' },
+  { name: 'Shoulders', desc: 'Deltoids: Front, Lateral, Rear', link: 'https://musclewiki.com/exercises/male/shoulders' },
+  { name: 'Biceps', desc: 'Biceps Brachii & Brachialis', link: 'https://musclewiki.com/exercises/male/biceps' },
+  { name: 'Triceps', desc: 'Triceps Brachii, all 3 heads', link: 'https://musclewiki.com/exercises/male/triceps' },
+  { name: 'Back', desc: 'Lats, Rhomboids, Traps, Lower Back', link: 'https://musclewiki.com/exercises/male/lats' },
+  { name: 'Legs', desc: 'Quads, Hamstrings, Glutes, Calves', link: 'https://musclewiki.com/exercises/male/quadriceps' },
+  { name: 'Core', desc: 'Abs and Obliques', link: 'https://musclewiki.com/exercises/male/abdominals' },
+  { name: 'Forearms', desc: 'Wrist flexors and extensors', link: 'https://musclewiki.com/exercises/male/forearms' }
 ];
 
 const mwGrid = document.getElementById('mw-grid');
