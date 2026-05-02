@@ -111,21 +111,20 @@ document.querySelectorAll('.eq-filter').forEach(btn => {
 
 // ══ MUSCLE WIKI GRID ════════════════════════════════════
 const mwData = [
-  { name: 'Chest', desc: 'Pectorals, Upper & Lower Chest', link: 'https://musclewiki.com/exercises/male/chest' },
-  { name: 'Front Shoulders', desc: 'Anterior & Lateral Deltoids', link: 'https://musclewiki.com/exercises/male/front-deltoids' },
-  { name: 'Rear Shoulders', desc: 'Posterior Deltoids', link: 'https://musclewiki.com/exercises/male/rear-deltoids' },
-  { name: 'Traps', desc: 'Upper Trapezius', link: 'https://musclewiki.com/exercises/male/traps' },
-  { name: 'Traps Middle', desc: 'Mid Trapezius & Rhomboids', link: 'https://musclewiki.com/exercises/male/traps-middle' },
-  { name: 'Lats', desc: 'Latissimus Dorsi', link: 'https://musclewiki.com/exercises/male/lats' },
-  { name: 'Lower Back', desc: 'Erector Spinae', link: 'https://musclewiki.com/exercises/male/lowerback' },
-  { name: 'Biceps', desc: 'Biceps Brachii & Brachialis', link: 'https://musclewiki.com/exercises/male/biceps' },
-  { name: 'Triceps', desc: 'Triceps Brachii', link: 'https://musclewiki.com/exercises/male/triceps' },
-  { name: 'Forearms', desc: 'Wrist flexors & extensors', link: 'https://musclewiki.com/exercises/male/forearms' },
-  { name: 'Abs', desc: 'Rectus Abdominis', link: 'https://musclewiki.com/exercises/male/abdominals' },
-  { name: 'Obliques', desc: 'Side Abdominals', link: 'https://musclewiki.com/exercises/male/obliques' },
-  { name: 'Quads', desc: 'Quadriceps Femoris', link: 'https://musclewiki.com/exercises/male/quads' },
-  { name: 'Hamstrings', desc: 'Biceps Femoris', link: 'https://musclewiki.com/exercises/male/hamstrings' },
-  { name: 'Glutes', desc: 'Gluteus Maximus', link: 'https://musclewiki.com/exercises/male/glutes' }
+  { name: 'Chest', desc: 'Pectorals, Upper & Lower Chest', link: 'https://musclewiki.com/exercises/chest' },
+  { name: 'Front Shoulder', desc: 'Anterior Deltoids', link: 'https://musclewiki.com/exercises/front-shoulder' },
+  { name: 'Rear Shoulder', desc: 'Posterior Deltoids', link: 'https://musclewiki.com/exercises/rear-shoulder' },
+  { name: 'Traps', desc: 'Upper Trapezius', link: 'https://musclewiki.com/exercises/traps' },
+  { name: 'Traps Middle', desc: 'Mid Trapezius & Rhomboids', link: 'https://musclewiki.com/exercises/traps-middle' },
+  { name: 'Lats', desc: 'Latissimus Dorsi', link: 'https://musclewiki.com/exercises/lats' },
+  { name: 'Lower Back', desc: 'Erector Spinae', link: 'https://musclewiki.com/exercises/lowerback' },
+  { name: 'Biceps', desc: 'Biceps Brachii & Brachialis', link: 'https://musclewiki.com/exercises/biceps' },
+  { name: 'Triceps', desc: 'Triceps Brachii', link: 'https://musclewiki.com/exercises/triceps' },
+  { name: 'Forearms', desc: 'Wrist flexors & extensors', link: 'https://musclewiki.com/exercises/forearms' },
+  { name: 'Obliques', desc: 'Side Abdominals', link: 'https://musclewiki.com/exercises/obliques' },
+  { name: 'Quads', desc: 'Quadriceps Femoris', link: 'https://musclewiki.com/exercises/quads' },
+  { name: 'Hamstrings', desc: 'Biceps Femoris', link: 'https://musclewiki.com/exercises/hamstrings' },
+  { name: 'Glutes', desc: 'Gluteus Maximus', link: 'https://musclewiki.com/exercises/glutes' }
 ];
 
 const mwGrid = document.getElementById('mw-grid');
@@ -154,9 +153,12 @@ renderFbEmbed();
 const cmsData = JSON.parse(localStorage.getItem('rddlCMS'));
 if (cmsData) {
   const hTitle = document.querySelector('.hero-title');
-  if (hTitle && cmsData.heroTitle) hTitle.innerHTML = cmsData.heroTitle;
+  // Only override if it was explicitly changed in CMS and isn't the old broken 'LEGACY' default
+  if (hTitle && cmsData.heroTitle && cmsData.heroTitle !== 'LEGACY') hTitle.innerHTML = cmsData.heroTitle;
+  
   const hSub = document.querySelector('.hero-sub');
-  if (hSub && cmsData.heroSub) hSub.innerHTML = cmsData.heroSub;
+  // Only override if it isn't the old default
+  if (hSub && cmsData.heroSub && cmsData.heroSub !== 'The harder the battle — the sweeter the victory.') hSub.innerHTML = cmsData.heroSub;
   
   // Apply visual overrides
   const overrides = JSON.parse(localStorage.getItem('rddlVisual') || '{}');

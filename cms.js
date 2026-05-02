@@ -8,7 +8,7 @@ function logout() {
 }
 
 const defaultCMS = {
-  heroTitle: 'LEGACY',
+  heroTitle: 'NO LIMITS<br><span style="color:var(--red)">NO EXCUSES</span>',
   heroSub: 'The harder the battle — the sweeter the victory.',
   about1: 'RDDL Fitness Zone is Mirpur\'s elite strength and conditioning facility. Purpose-built for serious athletes and beginners who refuse to stay beginners — every machine, every inch of floor is engineered for results.',
   about2: '768 members. One goal. No excuses.'
